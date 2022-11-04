@@ -1154,6 +1154,10 @@ cc_library {
         blacklist: "libvpx_blacklist.txt",
     },
     min_sdk_version: "29",
+       // Fails to compile when global ThinLTO is enabled for this library
+    lto: {
+        never: true,
+    },
 }
 
 cc_fuzz {
